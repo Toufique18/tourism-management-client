@@ -1,12 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from 'sweetalert2'
 
 
 const AddSpots = () => {
     const {user} = useContext(AuthContext)
-    const name = user ? user.displayName : '';
-        const email = user ? user.email : '';
+    const [name, setName] = useState(user ? user.displayName : '');
+    const [email, setEmail] = useState(user ? user.email : '');
     const handleSubmit = event => {
         
 
@@ -57,28 +57,60 @@ const AddSpots = () => {
     }
     return (
         <div className="container mx-auto lg:px-20 px-5 py-5">
-        
             <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-semibold mb-8">Add Tourists Spot</h1>
-            <form onSubmit={handleSubmit}  className="space-y-4">
-                {/* Form inputs */}
-                <div className="grid grid-cols-2 gap-4">
-                    <input type="text" name="image" placeholder="Image URL" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="tourists_spot_name" placeholder="Tourists Spot Name" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="country_Name" placeholder="Country Name" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="location" placeholder="Location" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="short_description" placeholder="Short Description" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="average_cost" placeholder="Average Cost" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="seasonality" placeholder="Seasonality" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="travel_time" placeholder="Travel Time" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="totalVisitorsPerYear" placeholder="Total Visitors Per Year" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="email" name="userEmail" placeholder="User Email" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                    <input type="text" name="userName" placeholder="User Name" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
-                </div>
-                {/* Submit Button */}
-                <button type="submit" value="add info" className="btn btn-primary w-full">Add</button>
-            </form>
-        </div>
+                <h1 className="text-3xl font-semibold mb-8">Add Tourists Spot</h1>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
+                            <label> Image URL:</label>
+                            <input type="text" name="image" id="image" placeholder="Image URL" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>Tourists Spot Name:</label>
+                            <input type="text" name="tourists_spot_name" id="tourists_spot_name" placeholder="Tourists Spot Name" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>Country Name:</label>
+                            <input type="text" name="country_Name" id="country_Name" placeholder="Country Name" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>Location:</label>
+                            <input type="text" name="location" id="location" placeholder="Location" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>Short Description:</label>
+                            <input type="text" name="short_description" id="short_description" placeholder="Short Description" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label >Average Cost:</label>
+                            <input type="text" name="average_cost" id="average_cost" placeholder="Average Cost" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>Seasonality:</label>
+                            <input type="text" name="seasonality" id="seasonality" placeholder="Seasonality" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>Travel Time:</label>
+                            <input type="text" name="travel_time" id="travel_time" placeholder="Travel Time" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>Total Visitors Per Year:</label>
+                            <input type="text" name="totalVisitorsPerYear" id="totalVisitorsPerYear" placeholder="Total Visitors Per Year" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>User Email:</label>
+                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} name="userEmail" id="userEmail" placeholder="User Email" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                        <div>
+                            <label>User Name:</label>
+                            <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="userName" id="userName" placeholder="User Name" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
+                        </div>
+                    </div>
+                    
+                    <button type="submit" value="add info" className="btn btn-primary w-full">Add</button>
+                </form>
+            </div>
         </div>
     );
 };
