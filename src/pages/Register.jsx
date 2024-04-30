@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -19,7 +21,19 @@ const Register = () => {
         // create user
         createUser( email, password)
             .then(result => {
-                console.log(result.user)
+                Swal.fire({
+                    title: 'success!',
+                    text: 'user registred successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                  })
+
+                  //update profile
+
+                  updateProfile(result.user, {
+                    displayName: name,
+                    photoURL: photo
+                  })
             })
             .catch(error => {
                 console.error(error)
