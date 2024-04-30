@@ -8,6 +8,7 @@ import Allspots from "../pages/Allspots";
 import AddSpots from "../pages/AddSpots";
 import Details from "../pages/Details";
 import MyList from "../pages/MyList";
+import Update from "../pages/Update";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
             {
                 path: '/myList',
                 element: <MyList></MyList>
+            },
+            {
+                path: '/update/:id',
+                element: <Update></Update>
             }
         ]
     }
