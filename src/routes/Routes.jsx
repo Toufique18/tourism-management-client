@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import Allspots from "../pages/Allspots";
 import AddSpots from "../pages/AddSpots";
 import Details from "../pages/Details";
+import MyList from "../pages/MyList";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
                 element: <Details></Details>,
                 loader: ()=> fetch("http://localhost:5000/information")
 
+            },
+            {
+                path: '/myList',
+                element: <MyList></MyList>
             }
         ]
     }
