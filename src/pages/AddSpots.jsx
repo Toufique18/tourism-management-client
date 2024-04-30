@@ -7,11 +7,10 @@ const AddSpots = () => {
     const {user} = useContext(AuthContext)
     const [name, setName] = useState(user ? user.displayName : '');
     const [email, setEmail] = useState(user ? user.email : '');
+
+    
     const handleSubmit = event => {
         
-
-        
-
         event.preventDefault();
 
         const form = event.target;
