@@ -7,7 +7,7 @@ const TouristsMem = () => {
       <div className="container mx-auto">
         <h2 className="text-2xl lg:text-4xl font-bold mb-8 text-center">Today's Best 3 Tourists Memory </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Card 1 */}
+          
           <div className="card">
             <img src={img} alt="Image 1" className="w-full h-64 object-cover rounded-md" />
             <div className="p-4">
@@ -15,7 +15,7 @@ const TouristsMem = () => {
               
             </div>
           </div>
-          {/* Card 2 */}
+          
           <div className="card">
             <img src={img3} alt="Image 2" className="w-full h-64 object-cover rounded-md" />
             <div className="p-4">
@@ -23,7 +23,7 @@ const TouristsMem = () => {
               
             </div>
           </div>
-          {/* Card 3 */}
+          
           <div className="card">
             <img src={img2} alt="Image 3" className="w-full h-64 object-cover rounded-md" />
             <div className="p-4">

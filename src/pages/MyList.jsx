@@ -30,7 +30,7 @@ const MyList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/information/${_id}`, {
+                fetch(`https://tourism-management-server-qnkzmpe9n-toufiques-projects.vercel.app/information/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
