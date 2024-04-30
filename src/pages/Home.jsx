@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../components/Banner/Banner";
 import SpotCard from "../components/SpotCard/SpotCard";
 import CustomerReviews from "../components/CustomerReviews";
+import TouristsMem from "../components/TouristsMem";
 
 const Home = () => {
 
@@ -14,6 +15,8 @@ const Home = () => {
                 {spots.map(spot => <SpotCard key={spot._id} spot={spot}></SpotCard>)}
             </div>
             <CustomerReviews></CustomerReviews>
+            
+            <TouristsMem></TouristsMem>
         </div>
     );
 };
