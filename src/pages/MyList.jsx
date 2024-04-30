@@ -50,27 +50,29 @@ const MyList = () => {
     return (
         <div className="container mx-auto lg:px-20 px-5 py-5">
 
-            <table>
+<table className="table-auto w-full border-collapse border border-gray-800">
                 <thead>
-                    <tr className="m-2">
-                        <th>Tourists Spot Name</th>
-                        <th>Country Name</th>
-                        <th>Location</th>
-                        <th>Average Cost</th>
-                        <th>Seasonality</th>
-                        <th>update/delete</th>
+                    <tr className="bg-gray-200">
+                        <th className="px-4 py-2">Tourists Spot Name</th>
+                        <th className="px-4 py-2">Country Name</th>
+                        <th className="px-4 py-2">Location</th>
+                        <th className="px-4 py-2">Average Cost</th>
+                        <th className="px-4 py-2">Seasonality</th>
+                        <th className="px-4 py-2">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {item?.map(info => (
-                        <tr key={info._id}>
-                            <td>{info.tourists_spot_name}</td>
-                            <td>{info.country_Name}</td>
-                            <td>{info.location}</td>
-                            <td>{info.average_cost}</td>
-                            <td>{info.seasonality}</td>
-                            <td className="gap-4">
-                                <Link to={`/update/${info._id}`}><button className="btn btn-primary">Update</button></Link>
+                    {item.map(info => (
+                        <tr key={info._id} className="border-b border-gray-400">
+                            <td className="px-4 py-2">{info.tourists_spot_name}</td>
+                            <td className="px-4 py-2">{info.country_Name}</td>
+                            <td className="px-4 py-2">{info.location}</td>
+                            <td className="px-4 py-2">{info.average_cost}</td>
+                            <td className="px-4 py-2">{info.seasonality}</td>
+                            <td className="px-4 py-2 flex gap-2">
+                                <Link to={`/update/${info._id}`}>
+                                    <button className="btn btn-primary">Update</button>
+                                </Link>
                                 <button onClick={() => handleDelete(info._id)} className="btn btn-primary">Delete</button>
                             </td>
                         </tr>

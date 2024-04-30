@@ -9,6 +9,7 @@ import AddSpots from "../pages/AddSpots";
 import Details from "../pages/Details";
 import MyList from "../pages/MyList";
 import Update from "../pages/Update";
+import PrivateRoute from "../pages/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -31,26 +32,26 @@ const router = createBrowserRouter([
             },
             {
                 path: '/allSpots',
-                element: <Allspots></Allspots>,
+                element: <PrivateRoute><Allspots></Allspots></PrivateRoute>,
                 loader: ()=> fetch("http://localhost:5000/information")
             },
             {
                 path: '/addSpots',
-                element: <AddSpots></AddSpots>
+                element: <PrivateRoute><AddSpots></AddSpots></PrivateRoute>
             },
             {
                 path: '/details/:_id',
-                element: <Details></Details>,
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
                 loader: ()=> fetch("http://localhost:5000/information")
 
             },
             {
                 path: '/myList',
-                element: <MyList></MyList>
+                element: <PrivateRoute><MyList></MyList></PrivateRoute>
             },
             {
                 path: '/update/:id',
-                element: <Update></Update>,
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
                 loader: ()=> fetch("http://localhost:5000/information")
                 //loader: ({params})=> fetch(`http://localhost:5000/information/${params._id}`)
             }
