@@ -5,7 +5,7 @@ const TouristsMem = () => {
   return (
     <div className=" py-20 px-5 lg:px-20 container mx-auto lg:px-20 px-5 py-5">
       <div className="container mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-bold mb-8 text-center">Today's Best 3 Tourists Memory </h2>
+        <h2 className="text-2xl lg:text-4xl font-bold mb-8 text-center">Today's Best 3 Tourists Memory </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Card 1 */}
           <div className="card">

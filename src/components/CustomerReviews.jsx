@@ -9,7 +9,7 @@ const CustomerReviews = () => {
                 <p className="text-2xl">Reviews</p>
                 <h1 className="text-2xl">What Our Tourists Saying!!</h1>
             </div>
-            <div className="flex-1 md:flex-1 lg:flex justify-center mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 justify-center mt-10 gap-3">
                 <div className=" bg-white rounded-lg shadow-lg p-8 mx-4">
                     <div className=" flex items-center justify-between mb-4">
                         <img src={img} alt="" className="w-20 h-20 rounded-full" />

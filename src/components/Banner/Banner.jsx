@@ -1,41 +1,39 @@
-
+import img from '../../assets/images/bali.jpg'
+import img2 from '../../assets/images/Angkor-Wat.jpg'
+import img3 from '../../assets/images/Penang-Island.jpg'
 const Banner = () => {
     return (
-        <div>
-            <div className="carousel w-full">
+        <div className='mb-5'>
+            <div className="carousel w-full ">
                 <div id="slide1" className="carousel-item relative w-full">
-                    <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
+                    <img src={img} className="w-full h-80 rounded-lg" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         
-                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide3" className="btn btn-circle">❮</a>
                         <div className="flex-1 w-3/5 ">
-                        <h1 className="text-center text-red-500">Welcome to TourBuddy</h1>
-                        <p className="text-center text-xs lg:text-2xl" >TourBuddy is simplifying travel with tools and resources for seamless adventures. Your go-to for hassle-free journey planning and unforgettable experiences.</p>
+                        <h1 className="text-center text-2xl text-red-500">Welcome to TourBuddy</h1>
+                        <p className="text-center text-xs text-green-500 lg:text-2xl" >TourBuddy is simplifying travel with tools and resources for seamless adventures. Your go-to for hassle-free journey planning and unforgettable experiences.</p>
                         </div>
                         <a href="#slide2" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <img src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg" className="w-full" />
+                    <img src={img2} className="w-full h-80 rounded-lg" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide1" className="btn btn-circle">❮</a>
+                        <p className="text-center text-xs text-green-500 lg:text-2xl">Join our community of fellow travelers and share your experiences, tips, and recommendations. </p>
                         <a href="#slide3" className="btn btn-circle">❯</a>
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
-                    <img src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg" className="w-full" />
+                    <img  src={img3} className="w-full h-80 rounded-lg" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                         <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="https://daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
+                        <p className="text-center text-xs text-green-500 lg:text-2xl">Browse through our curated selection of destinations, from bustling cities to serene countryside retreats</p>
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>
+                
             </div>
         </div>
     );
