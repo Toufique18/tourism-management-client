@@ -4,14 +4,14 @@ import Swal from 'sweetalert2'
 
 
 const AddSpots = () => {
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
     const [name, setName] = useState(user ? user.displayName : '');
     const [email, setEmail] = useState(user ? user.email : '');
 
-    
+
     const handleSubmit = event => {
-        
-        event.preventDefault();
+
+        event.preventDefault();  
 
         const form = event.target;
 
@@ -27,28 +27,28 @@ const AddSpots = () => {
         const userEmail = form.userEmail.value;
         const userName = form.userName.value;
 
-        const newInfo = {image, tourists_spot_name, country_Name, location, short_description, average_cost, seasonality, travel_time, totalVisitorsPerYear, userEmail, userName}
+        const newInfo = { image, tourists_spot_name, country_Name, location, short_description, average_cost, seasonality, travel_time, totalVisitorsPerYear, userEmail, userName }
         console.log(newInfo)
         //send to the server
-        fetch("http://localhost:5000/information", {
+        fetch("https://tourism-management-server-tau.vercel.app/information", {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
             },
             body: JSON.stringify(newInfo)
         })
-             .then(res => res.json())
-             .then(data => {
+            .then(res => res.json())
+            .then(data => {
                 console.log(data);
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         title: 'success!',
                         text: 'Data added to database',
                         icon: 'success',
                         confirmButtonText: 'close'
-                      })
+                    })
                 }
-             })
+            })
 
         console.log(newInfo)
 
@@ -59,7 +59,7 @@ const AddSpots = () => {
             <div className="container mx-auto px-4 py-8">
                 <h1 className="text-3xl font-semibold mb-8">Add Tourists Spot</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
-                    
+
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label> Image URL:</label>
@@ -106,7 +106,7 @@ const AddSpots = () => {
                             <input type="text" value={name} onChange={(e) => setName(e.target.value)} name="userName" id="userName" placeholder="User Name" className="input w-full border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200" />
                         </div>
                     </div>
-                    
+
                     <button type="submit" value="add info" className="btn btn-primary w-full">Add</button>
                 </form>
             </div>

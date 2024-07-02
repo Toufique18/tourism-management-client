@@ -10,7 +10,7 @@ const MyList = () => {
     console.log(user);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/information/${user?.email}`)
+        fetch(`https://tourism-management-server-tau.vercel.app/information/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setItem(data)
@@ -30,7 +30,7 @@ const MyList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://tourism-management-server-qnkzmpe9n-toufiques-projects.vercel.app/information/${_id}`, {
+                fetch(`https://tourism-management-server-tau.vercel.app/information/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

@@ -27,7 +27,7 @@ const Update = () => {
         const newInfo = {image, tourists_spot_name, country_Name, location, short_description, average_cost, seasonality, travel_time, totalVisitorsPerYear, userEmail, userName}
         console.log(newInfo)
         //send to the server
-        fetch(`https://tourism-management-server-qnkzmpe9n-toufiques-projects.vercel.app/information/${spot._id}`, {
+        fetch(`https://tourism-management-server-tau.vercel.app/information/${spot._id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

@@ -20,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <Home></Home>,
-                loader: ()=> fetch("http://localhost:5000/information")
+                loader: ()=> fetch("https://tourism-management-server-tau.vercel.app/information")
             },
             {
                 path: '/login',
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path: '/allSpots',
                 element: <PrivateRoute><Allspots></Allspots></PrivateRoute>,
-                loader: ()=> fetch("http://localhost:5000/information")
+                loader: ()=> fetch("https://tourism-management-server-tau.vercel.app/information")
             },
             {
                 path: '/addSpots',
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
             {
                 path: '/details/:_id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ()=> fetch("http://localhost:5000/information")
+                loader: ()=> fetch("https://tourism-management-server-tau.vercel.app/information")
 
             },
             {
@@ -52,8 +52,8 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ()=> fetch("http://localhost:5000/information")
-                //loader: ({params})=> fetch(`http://localhost:5000/information/${params._id}`)
+                loader: ()=> fetch("https://tourism-management-server-tau.vercel.app/information")
+                //loader: ({params})=> fetch(`https://tourism-management-server-tau.vercel.app/information/${params._id}`)
             }
         ]
     }
